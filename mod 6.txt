@@ -1,0 +1,46 @@
+#Defining Student Class
+class student:
+	"""A class representing a student."""
+	def __init__(self,n,a):
+		self.full_name = n
+		self.age = a
+	def get_age(self):
+		return self.age
+#Using the class
+f = student ("Bob Smith", 23)
+f.full_name
+f.get_age()     
+getattr(f, "full_name")
+getattr(f, "age")
+
+#Class Sample
+class sample:    
+    x = 23    
+    def increment(self):    
+        self.__class__.x += 1
+a = sample()
+b = sample()
+a.increment()
+a.increment()
+b.__class__.x
+
+#Class Counter
+class counter:
+    overall_total = 0
+    # class attribute 
+    def __init__(self):
+        self.my_total = 0
+        # data attribute
+    def increment(self):
+        counter.overall_total = counter.overall_total + 1
+        self.my_total = self.my_total + 1
+#Use class counter
+a = counter()
+b = counter()
+a.increment()
+b.increment()
+b.increment()
+a.my_total
+a.__class__.overall_total
+b.my_total
+b.__class__.overall_total
